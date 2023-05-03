@@ -1,6 +1,0 @@
-name: ExotiaWallet
-version: '1.0-SNAPSHOT'
-main: net.exotia.exotiawallet.ExotiaWallet
-api-version: 1.19
-authors: [yCode organization]
-website: https://ycode.ovh
