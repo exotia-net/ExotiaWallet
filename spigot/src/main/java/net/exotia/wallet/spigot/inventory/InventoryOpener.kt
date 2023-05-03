@@ -5,6 +5,7 @@ import eu.okaeri.injector.annotation.Inject
 import eu.okaeri.injector.annotation.PostConstruct
 import net.exotia.wallet.spigot.factory.ConfigurationFactory
 import net.exotia.wallet.spigot.inventory.categories.CategoriesInventoryConfiguration
+import net.exotia.wallet.spigot.objects.Service
 import org.bukkit.entity.Player
 import xyz.xenondevs.invui.window.Window
 
