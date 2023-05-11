@@ -159,8 +159,9 @@
         </dependency>
         <dependency>
             <groupId>xyz.xenondevs.invui</groupId>
-            <artifactId>invui-kotlin</artifactId>
+            <artifactId>invui</artifactId>
             <version>1.5</version>
+            <type>pom</type>
         </dependency>
         <dependency>
             <groupId>dev.rollczi.litecommands</groupId>
