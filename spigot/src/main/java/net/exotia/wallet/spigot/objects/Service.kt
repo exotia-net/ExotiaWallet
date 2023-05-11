@@ -1,6 +1,8 @@
 package net.exotia.wallet.spigot.objects
 
 import eu.okaeri.configs.OkaeriConfig
+import net.exotia.wallet.spigot.actions.ActionsService
+import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 
 class Service(
@@ -18,9 +20,7 @@ class Service(
     val actions: List<String>
         get() = _actions
 
-    fun execute() {
-        this._actions.forEach {
-            println(it)
-        }
+    fun execute(actionsService: ActionsService, player: Player) {
+        actionsService.parse(this._actions, player)
     }
 }

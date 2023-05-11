@@ -2,6 +2,8 @@ package net.exotia.wallet.spigot
 
 import org.bukkit.plugin.java.JavaPlugin
 import eu.okaeri.injector.OkaeriInjector;
+import net.exotia.wallet.spigot.actions.ActionsService
+import net.exotia.wallet.spigot.actions.providers.NotifyAction
 import net.exotia.wallet.spigot.commands.CommandsModule
 import net.exotia.wallet.spigot.configuration.ConfigurationModule
 import net.exotia.wallet.spigot.inventory.InventoryOpener
@@ -14,6 +16,10 @@ class ExotiaWallet : JavaPlugin() {
         this.injector.registerInjectable(this.injector);
 
         this.injector.createInstance(ConfigurationModule::class.java)
+
+        val actionsService: ActionsService = ActionsService()
+        actionsService.registerAction(NotifyAction())
+        this.injector.registerInjectable(actionsService)
 
         this.injector.registerInjectable(this.injector.createInstance(InventoryOpener::class.java))
         this.injector.createInstance(CommandsModule::class.java)

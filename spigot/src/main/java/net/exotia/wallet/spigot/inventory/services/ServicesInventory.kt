@@ -1,6 +1,7 @@
 package net.exotia.wallet.spigot.inventory.services
 
 import eu.okaeri.injector.annotation.Inject
+import net.exotia.wallet.spigot.actions.ActionsService
 import net.exotia.wallet.spigot.configuration.files.PluginConfiguration
 import net.exotia.wallet.spigot.inventory.InventoryConfiguration
 import net.exotia.wallet.spigot.inventory.InventoryOpener
@@ -19,7 +20,9 @@ import xyz.xenondevs.invui.item.impl.SimpleItem
 
 class ServicesInventory : OpenableInventory {
     @Inject private val inventoryConfiguration: ServicesInventoryConfiguration? = null
-    @Inject private val pluginConfiguration: PluginConfiguration? = null;
+    @Inject private val pluginConfiguration: PluginConfiguration? = null
+    @Inject private val actionsService: ActionsService? = null
+
     override fun createGui(inventoryOpener: InventoryOpener?, vararg params: String?): Gui {
         val builder = Gui.normal()
             .setStructure(*inventoryConfiguration!!.getPattern())
@@ -41,7 +44,7 @@ class ServicesInventory : OpenableInventory {
                         return ItemBuilder(service.icon)
                     }
                     override fun handleClick(clickType: ClickType, player: Player, inventoryClickEvent: InventoryClickEvent) {
-                        service.execute()
+                        service.execute(actionsService!!, player)
                     }
                 }
                 gui.addItems(item)
