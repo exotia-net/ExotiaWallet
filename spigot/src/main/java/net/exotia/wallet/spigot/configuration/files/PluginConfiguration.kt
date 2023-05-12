@@ -25,7 +25,7 @@ class PluginConfiguration : OkaeriConfig() {
                         "[NOTIFY] &8&l>> &7Gracz &6&l{player} &7zakupil range vip!",
                         "[NOTIFY] &8&l>> &7Dziekujemy za wsparcie &c&l<3",
                         "[NOTIFY] ",
-                        "[COMMAND] lp user {player} group set vip 30d"
+                        "[EXECUTE_COMMAND] lp user {player} group set vip 30d"
                     )
                 ),
                 Service("Ranga SVIP", 30.98, ItemCreator(Material.DIAMOND_CHESTPLATE).build(),
@@ -34,7 +34,7 @@ class PluginConfiguration : OkaeriConfig() {
                         "[NOTIFY] &8&l>> &7Gracz &6&l{player} &7zakupil range vip!",
                         "[NOTIFY] &8&l>> &7Dziekujemy za wsparcie &c&l<3",
                         "[NOTIFY] ",
-                        "[COMMAND] lp user {player} group set vip 30d"
+                        "[EXECUTE_COMMAND] lp user {player} group set vip 30d"
                     )
                 )
             )
@@ -50,7 +50,7 @@ class PluginConfiguration : OkaeriConfig() {
                         "[NOTIFY] &8&l>> &7Gracz &6&l{player} &7zakupil klucze!",
                         "[NOTIFY] &8&l>> &7Dziekujemy za wsparcie &c&l<3",
                         "[NOTIFY] ",
-                        "[COMMAND] dwerqer"
+                        "[EXECUTE_COMMAND] dwerqer"
                     )
                 ),
             )

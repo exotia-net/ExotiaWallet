@@ -1,16 +1,19 @@
-package net.exotia.wallet.proxy;
+package net.exotia.wallet.proxy
 
-import net.md_5.bungee.api.plugin.Plugin;
+import net.exotia.wallet.proxy.listeners.PluginMessagingListener
+import net.md_5.bungee.api.plugin.Plugin
 
-public final class ExotiaWallet extends Plugin {
-
-    @Override
-    public void onEnable() {
-        // Plugin startup logic
+class ExotiaWallet : Plugin() {
+    override fun onEnable() {
+        proxy.registerChannel(NOTIFICATION_CHANNEL)
+        proxy.pluginManager.registerListener(this, PluginMessagingListener(this))
     }
 
-    @Override
-    public void onDisable() {
+    override fun onDisable() {
         // Plugin shutdown logic
+    }
+
+    companion object {
+        var NOTIFICATION_CHANNEL: String? = "wallet:notification"
     }
 }
