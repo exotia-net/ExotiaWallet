@@ -16,14 +16,12 @@ class NotifyAction(private val plugin: Plugin) : Action {
     }
 
     override fun execute(player: Player, message: String) {
-        // Tutaj ma byc notify do bungee
-//        Bukkit.getOnlinePlayers().forEach { player -> player.sendMessage(message) }
         val byteArrayOutputStream = ByteArrayOutputStream()
         val dataOutputStream = DataOutputStream(byteArrayOutputStream)
 
         try {
-            dataOutputStream.writeUTF(message)
-            this.plugin.server.sendPluginMessage(this.plugin, ExotiaWallet.NOTIFICATION_CHANNEL, byteArrayOutputStream.toByteArray())
+            dataOutputStream.writeUTF(message.replace("{player}", player.name))
+            player.sendPluginMessage(this.plugin, ExotiaWallet.NOTIFICATION_CHANNEL, byteArrayOutputStream.toByteArray())
         } catch (exception: IOException) {
             exception.printStackTrace()
         }
