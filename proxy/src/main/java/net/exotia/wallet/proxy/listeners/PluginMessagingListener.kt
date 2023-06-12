@@ -14,9 +14,9 @@ import java.util.function.Consumer
 
 class PluginMessagingListener() : Listener {
     @EventHandler
-    fun onPluginMessageReceived(event: PluginMessageEvent?) {
-        if (event?.tag != ExotiaWallet.NOTIFICATION_CHANNEL) return
-        val byteArrayInputStream = ByteArrayInputStream(event?.data)
+    fun onPluginMessageReceived(event: PluginMessageEvent) {
+        if (event.tag != ExotiaWallet.NOTIFICATION_CHANNEL) return
+        val byteArrayInputStream = ByteArrayInputStream(event.data)
         val dataInputStream = DataInputStream(byteArrayInputStream)
         try {
             if (dataInputStream.available() <= 0) return

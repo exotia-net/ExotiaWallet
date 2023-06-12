@@ -16,7 +16,7 @@ class InventoryOpener {
     @PostConstruct
     fun onConstruct() {
         this.injector!!.registerInjectable(this.configurationFactory!!.produce(CategoriesInventoryConfiguration::class.java, "inventories/main.yml"))
-        this.injector.registerInjectable(this.configurationFactory!!.produce(ServicesInventoryConfiguration::class.java, "inventories/services.yml"))
+        this.injector.registerInjectable(this.configurationFactory.produce(ServicesInventoryConfiguration::class.java, "inventories/services.yml"))
     }
 
     fun open(player: Player, openableInventory: Class<out OpenableInventory?>, vararg params: String?) {

@@ -10,6 +10,6 @@ class ExecuteCommandAction : Action {
     }
 
     override fun execute(player: Player, message: String) {
-        Bukkit.getServer().dispatchCommand(Bukkit.getServer().consoleSender, message)
+        Bukkit.getServer().dispatchCommand(Bukkit.getServer().consoleSender, message.replace("{player}", player.name))
     }
 }

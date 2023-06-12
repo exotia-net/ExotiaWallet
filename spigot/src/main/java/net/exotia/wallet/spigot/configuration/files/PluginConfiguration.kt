@@ -19,7 +19,8 @@ class PluginConfiguration : OkaeriConfig() {
             .hideAttributes(true)
             .build(),
             listOf(
-                Service("Ranga VIP", 15.98, ItemCreator(Material.GOLDEN_CHESTPLATE).build(),
+                Service("Ranga VIP", 15.98, ItemCreator(Material.GOLDEN_CHESTPLATE).title("&6&lRanga VIP")
+                        .lore(listOf("", "&8&l>> &7Kliknij aby kupic", "")).build(),
                     listOf(
                         "[NOTIFY] ",
                         "[NOTIFY] &8&l>> &7Gracz &6&l{player} &7zakupil range vip!",
